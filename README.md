@@ -1,69 +1,25 @@
-# 1. Instalar o Node.js e npm:
+# dependencias
 
-Baixe e instale o Node.js. Isso também instala o npm (Node Package Manager).
+- docker
+- php
+- symphony
+- node/npm
+- vue
+- mongo
 
-Verifique se o Node.js e npm foram instalados:
+# frontend:
 
-Terminal:
+- cd blazar-frontend
+- make dev
+- docker compose up --build(dependendo do sistema pode ser necessario perimissao *sudo*)
+- npm run dev
 
-Copiar código
+# backend
 
-node -v
-npm -v
+- cd blazar-backend
+- composer install
+- sudo apt install php8.3-mongodb
+- docker compose start
+- symfony server:start --port=1500
 
-# 2. Instalar o Vue CLI (se necessário)
-A Vue CLI pode ser útil para criar novos projetos e configurar ambientes locais.
-
-Instale globalmente:
-
-Terminal: 
-
-Copiar código
-
-npm install -g @vue/cli
-
-Verifique a instalação:
-
-Terminal: 
-
-Copiar código
-vue --version
-
-# 3. Clonar ou baixar o projeto
-Se o projeto estiver em um repositório Git, clone-o:
-
-
-Terminal:
-Copiar código
-git clone https://github.com/JoaoBittencourt1/blazar-
-
-Navegue até a pasta do projeto:
-
-Terminal: 
-
-Copiar código
-cd caminho/do/projeto
-# 4. Instalar as dependências do projeto
-Instale as dependências listadas no arquivo package.json do projeto:
-
-terminal:
-
-Copiar código
-npm install
-# 5. Executar o servidor de desenvolvimento
-Inicie o servidor para visualizar o projeto localmente:
-
-terminal:
-
-Copiar código:
-
-npm run serve 
-
-Em outro terminal
-
-Copiar código:
-
-cd stripe-backend 
-node index.js
-
-http://localhost:8080/ - link para acessar o projeto frontend localmente.
+- symfony server:start --port=1500 --no-tls
