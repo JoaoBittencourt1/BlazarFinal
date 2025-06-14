@@ -1,0 +1,64 @@
+.fs-navigation {
+  padding: .5rem;
+
+  .fs-divider {
+    margin: .2rem 1rem;
+    width: calc(100% - 2rem - 2px);
+    border: 1px solid rgba(255, 255, 255, .1);
+    opacity: 0;
+  }
+
+  .select-page {
+    display: flex;
+    gap: .5rem;
+    margin: 0 auto;
+    padding: 1rem;
+    border: none;
+    border-radius: 1.25rem;
+    background: none;
+    color: var(--white);
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition: .12s;
+
+    &.current-page {
+      color: var(--primary);
+      background-color: var(--white);
+      pointer-events: none;
+    }
+
+    &:hover {
+      color: var(--primary);
+      background-color: var(--white);
+      opacity: .75;
+    }
+  }
+
+  .page-describe {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    width: 100%;
+  }
+
+  &.nav-expanded {
+    padding: .5rem 1rem;
+
+    .fs-divider {
+      opacity: 1;
+      margin: .4rem 1rem;
+      width: calc(100% - 2rem - 2px);
+    }
+
+    .select-page {
+      width: 100%;
+    }
+
+    .page-describe {
+      display: flex;
+    }
+  }
+}

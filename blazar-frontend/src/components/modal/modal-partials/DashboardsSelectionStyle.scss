@@ -1,0 +1,41 @@
+.dashboards-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .option {
+    padding: 0 0.5rem;
+    width: min-content;
+    max-width: 100%;
+    overflow: hidden;
+    border: none;
+    border-radius: 20rem;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Inter';
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: var(--white);
+    cursor: pointer;
+
+    transition: .15s ease-out;
+
+    &:hover {
+      background-color: var(--purple-100);
+    }
+  }
+}

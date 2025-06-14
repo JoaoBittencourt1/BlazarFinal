@@ -1,0 +1,20 @@
+{
+  "rootDir": ".",
+  "modulePaths": [
+    "<rootDir>"
+  ],
+  "transform": {
+    "^.+\\.vue$": "@vue/vue3-jest",
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx", "vue"],
+  "testEnvironment": "jest-environment-jsdom",
+  "testEnvironmentOptions": {
+    "customExportConditions": ["node", "node-addons"]
+  },
+  "testRegex": ".*\\.(spec|test).ts$",
+  "collectCoverageFrom": [
+    "./(src|tests)/**/*.(t|j)s"
+  ],
+  "coverageDirectory": "./tests/coverage"
+}

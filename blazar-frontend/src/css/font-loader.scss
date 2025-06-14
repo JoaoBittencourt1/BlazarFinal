@@ -1,0 +1,99 @@
+$fonts: (
+  'Inter' url(./fonts/Inter/static/Inter-Black.ttf) 900 normal,
+  'Inter' url(./fonts/Inter/static/Inter-ExtraBold.ttf) 800 normal,
+  'Inter' url(./fonts/Inter/static/Inter-Bold.ttf) 700 normal,
+  'Inter' url(./fonts/Inter/static/Inter-SemiBold.ttf) 600 normal,
+  'Inter' url(./fonts/Inter/static/Inter-Medium.ttf) 500 normal,
+  'Inter' url(./fonts/Inter/static/Inter-Regular.ttf) 400 normal,
+  'Inter' url(./fonts/Inter/static/Inter-Light.ttf) 300 normal,
+  'Inter' url(./fonts/Inter/static/Inter-ExtraLight.ttf) 200 normal,
+  'Inter' url(./fonts/Inter/static/Inter-Thin.ttf) 100 normal,
+
+  'Poppins' url(./fonts/Poppins/Poppins-Black.ttf) 900 normal,
+  'Poppins' url(./fonts/Poppins/Poppins-BlackItalic.ttf) 900 italic,
+  'Poppins' url(./fonts/Poppins/Poppins-ExtraBold.ttf) 800 normal,
+  'Poppins' url(./fonts/Poppins/Poppins-ExtraBoldItalic.ttf) 800 italic,
+  'Poppins' url(./fonts/Poppins/Poppins-Bold.ttf) 700 normal,
+  'Poppins' url(./fonts/Poppins/Poppins-BoldItalic.ttf) 700 italic,
+  'Poppins' url(./fonts/Poppins/Poppins-SemiBold.ttf) 600 normal,
+  'Poppins' url(./fonts/Poppins/Poppins-SemiBoldItalic.ttf) 600 italic,
+  'Poppins' url(./fonts/Poppins/Poppins-Medium.ttf) 500 normal,
+  'Poppins' url(./fonts/Poppins/Poppins-MediumItalic.ttf) 500 italic,
+  'Poppins' url(./fonts/Poppins/Poppins-Regular.ttf) 400 normal,
+  'Poppins' url(./fonts/Poppins/Poppins-Light.ttf) 300 normal,
+  'Poppins' url(./fonts/Poppins/Poppins-LightItalic.ttf) 300 italic,
+  'Poppins' url(./fonts/Poppins/Poppins-ExtraLight.ttf) 200 normal,
+  'Poppins' url(./fonts/Poppins/Poppins-ExtraLightItalic.ttf) 200 italic,
+  'Poppins' url(./fonts/Poppins/Poppins-Thin.ttf) 100 normal,
+  'Poppins' url(./fonts/Poppins/Poppins-ThinItalic.ttf) 100 italic,
+
+  'Material Icons' url(./fonts/MaterialIcons/MaterialIcons-Regular.ttf) 400 normal,
+  'Material Icons Outlined' url(./fonts/MaterialIcons/MaterialIconsOutlined-Regular.otf) 400 normal,
+  'Material Icons Rounded' url(./fonts/MaterialIcons/MaterialIconsRound-Regular.otf) 400 normal,
+  'Material Icons Sharp' url(./fonts/MaterialIcons/MaterialIconsSharp-Regular.otf) 400 normal,
+  'Material Icons TwoTone' url(./fonts/MaterialIcons/MaterialIconsTwoTone-Regular.otf) 400 normal,
+);
+
+@each $family, $url, $weight, $style in $fonts {
+  @font-face {
+    font-family: $family;
+    src: $url;
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+// https://fonts.google.com/icons?icon.set=Material+Icons&icon.platform=web
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+
+  &.md-outlined {
+    font-family: 'Material Icons Outlined';
+  }
+
+  &.md-rounded {
+    font-family: 'Material Icons Rounded';
+  }
+
+  &.md-sharp {
+    font-family: 'Material Icons Sharp';
+  }
+
+  &.md-twotone {
+    font-family: 'Material Icons TwoTone';
+  }
+
+  &.md-16 {
+    font-size: 16px;
+  }
+
+  &.md-18 {
+    font-size: 18px;
+  }
+
+  &.md-24 {
+    font-size: 24px;
+  }
+
+  &.md-36 {
+    font-size: 36px;
+  }
+
+  &.md-48 {
+    font-size: 48px;
+  }
+}

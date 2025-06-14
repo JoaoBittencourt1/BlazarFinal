@@ -1,0 +1,116 @@
+.dashboard-wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: var(--light);
+  }
+  
+  .dashboard-screen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    overflow-y: auto;
+  }
+  
+  .account-content {
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .account-section {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 32px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+  
+  .input-group label {
+    font-weight: 500;
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: #444;
+  }
+  
+  .input-group input {
+    height: 53px;
+    font-size: 16px;
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    padding: .5rem 1rem;
+    border: 1px solid var(--gray-400);
+    border-radius: 10rem;
+  }
+  
+  .input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  
+  .linked-account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .botao-salvar {
+    width: 200px;
+    height: 53px;
+    cursor: pointer;
+    margin-top: 16px;
+    margin-bottom: 10px;
+    padding: 0.25rem;
+    border: none;
+    border-radius: 85px;
+    background-color: #672cb7;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+  
+  .botao-salvar:disabled {
+    background-color: #bca3e3;
+    cursor: not-allowed;
+  }  
+
+  .botao-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .link-button{
+    background: none;
+    border: none;
+    color: #4a00ff;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  .botao-wrapper.space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }

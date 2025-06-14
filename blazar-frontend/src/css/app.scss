@@ -1,0 +1,134 @@
+// app global css in SCSS form
+
+@import 'font-loader.scss';
+
+:root {
+  --purple-500: #682BB7;
+  --purple-400: #824DC7;
+  --purple-300: #9E7DCA;
+  --purple-200: #BAA7D2;
+  --purple-100: #D5CDDF;
+
+  --blue-500: #30B5F2;
+  --blue-400: #69C3EC;
+  --blue-300: #9CD3EC;
+  --blue-200: #CBE5F1;
+  --blue-100: #F4F9FB;
+
+  --gray-neutral: #808191;
+  --gray-500: #5C5C5C;
+  --gray-400: #767676;
+  --gray-300: #A4A4A4;
+  --gray-200: #E8E8E8;
+
+  --light: #F2F2F2;
+  --white: #FEFEFE;
+  --black: #12171E;
+  --invalidy: #B3261E;
+
+  --primary: var(--purple-500);
+  --secondary: var(--blue-500);
+  --muted: var(--gray-400);
+  --text: var(--black);
+
+  --grad-vertical-purple: linear-gradient(90deg, var(--blue-500), var(--purple-500));
+  --grad-deg-purple: linear-gradient(242.33deg, #26BBFB -2.75%, #581DB6 51.44%, #29B3F7 101.71%, #26BBFB 104.5%);
+
+  --fade-in: fade-in .3s both normal;
+  --rotate-anim: rotate-anim 1s both infinite;
+  --progress-bar-anim: load-bar 10s both normal;
+
+  --shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+  --button-action-shadow:
+    0px 2px 4px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14);
+  --dashboard-button-shadow: 0 3px 5px #9F8EBF;
+  --find-dashboard-shadow:
+    0px 1px 3px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+
+  --scrollbar-width: .7rem;
+  --scrollbar-color: var(--blue-400);
+  --scrollbar-background: var(--gray-200);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10rem;
+  background-color: var(--scrollbar-color);
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-track-piece {
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
+  border-radius: 10rem;
+  background-color: var(--scrollbar-background);
+}
+
+html,
+body {
+  scrollbar-color: var(--scrollbar-color) var(--scrollbar-background);
+  scrollbar-width: var(--scrollbar-width);
+}
+
+figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+.g-link-tooltip {
+  border-radius: 10rem;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate-anim {
+  0% {
+    transform: rotateZ(0);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes load-bar {
+  0%,
+  5% {
+    right: 99%;
+  }
+
+  20%,
+  30% {
+    right: 75%;
+  }
+
+  70%,
+  80% {
+    right: 35%;
+  }
+}

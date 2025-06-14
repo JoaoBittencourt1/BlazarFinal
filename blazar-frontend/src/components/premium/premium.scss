@@ -1,0 +1,213 @@
+.tabela {
+  width: 100%;
+  max-width: 1146px;
+  background: rgba(255, 255, 255, 0.185);
+  border-radius: 20px;
+  border: 1px solid black;
+  margin: 40px auto;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  a {
+    
+    text-decoration: none;
+  }
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+
+  .titulo {
+    font-weight: bold;
+    font-size: 16px;
+    
+  }
+}
+
+.colunas {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.coluna {
+  flex: 1 1 300px; 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    
+    font-size: 15px;
+  }
+
+  
+
+  select {
+    appearance: none;
+    padding-right: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.41998 9.70996L12 13.29L15.58 9.70996L17 11.1299L12 16.1299L7 11.1299L8.41998 9.70996Z' fill='%23404040'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+}
+
+.grupo-horizontal {
+  display: flex;
+  gap: 20px;
+
+  .campo {
+    flex: 1;
+    
+    & select#cidade,
+    & select#estado {
+      margin-top: -12px;
+    }
+
+    label {
+      
+      font-size: 15px;
+    }
+  }
+}
+
+
+.grupo-horizontal .campo label[for="cidade"],
+.grupo-horizontal .campo label[for="estado"] {
+  position: relative;
+  top: -12px;
+  display: inline-block;
+}
+  .endereco {
+    flex: 3;
+  }
+
+  .numero {
+    flex: 1;
+    max-width: 120px;
+  }
+
+.rodape {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .testar-ferramenta {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .termos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .termo {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      
+
+      input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        margin-top: 2px;
+        cursor: pointer;
+      }
+
+      label {
+        font-size: 14px;
+
+        a {
+          color: blue;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  #btnAvancar {
+    align-self: flex-end;
+    width: 200px;
+    height: 53px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: .25rem;
+    border: none;
+    border-radius: 85px;
+    background-color: #672cb7;
+
+    &:disabled {
+      background-color: #672cb7;
+      cursor: not-allowed;
+    }
+  }
+}
+
+input[type="date"] {
+  &::-webkit-calendar-picker-indicator {
+    margin-left: 8px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .colunas {
+    flex-direction: column;
+  }
+
+  .tabela {
+    padding: 16px;
+    height: auto; 
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input,
+  select {
+    font-size: 14px;
+    height: 45px;
+  }
+
+  #btnAvancar {
+    width: 100%;
+    font-size: 16px;
+    
+  }
+}
+
+.pagina-premium {
+  min-height: 100vh;
+  padding: 32px;
+  background: var(--grad-deg-purple);
+  input,
+  select {
+    height: 53px;
+    font-size: 16px;
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  padding: .5rem 1rem;
+  border: 1px solid var(--gray-400);
+  border-radius: 10rem;
+  }
+}

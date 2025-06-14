@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fatura {
+  display: flex;
+  justify-content: center; 
+  gap: 40px; 
+  flex-wrap: wrap; 
+  max-width: 1300px;
+  margin: 40px auto;
+}
+
+.card, .card2 {
+  width: 540px;
+  min-width: 320px;
+  background: rgba(255,255,255,0.404);
+  border-radius: 20px;
+  border: 1px solid black;
+  padding: 32px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(113, 113, 113, 0.7);
+  margin: 20px 0;
+}
+
+.fatura-header, .fatura-row, .fatura-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fatura-header span, .fatura-row span, .fatura-total-row span {
+  font-size: 20px;
+  color: #404040;
+  opacity: 1;
+}
+
+.fatura-header .title, .fatura-row .title, .fatura-total-row .title {
+  font-weight: bold;
+}
+
+.fatura-row .value {
+  font-weight: bold;
+  color: #404040;
+  min-width: 80px;
+  text-align: right;
+}
+
+.fatura-total-row .value {
+  font-weight: bold;
+  color: #0900b2;
+  min-width: 80px;
+  text-align: right;
+}
+
+
+.stripe-input {
+  width: 100%;
+  height: 53px;
+  border: 1px solid var(--gray-400);
+  border-radius: 10rem;
+  padding: .5rem 1rem;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  background-color: white;
+  
+}
+
+#cvcValidade {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.botao-concluir {
+    width: 200px;
+    height: 53px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: .25rem;
+    border: none;
+    border-radius: 85px;
+    background-color: #672cb7;
+    font-size: 14px;
+  }
+
+
+.botao-concluir:disabled {
+  background-color: #b3d8ff;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .fatura {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .card, .card2 {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .fatura-header, .fatura-row, .fatura-total-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fatura-row .value, .fatura-total-row .value {
+    text-align: left;
+    min-width: auto;
+  }
+}
+.pagina-pagamento {
+  min-height: 100vh;
+  padding: 32px;
+  background: linear-gradient(to right, #3f5efb, #a48ef9);
+
+  input[type="text"] {
+    width: 100%;
+    height: 53px;
+    border: 1px solid var(--gray-400);
+  border-radius: 10rem;
+  padding: .5rem 1rem;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  background-color: white;
+  }
+}
+
+.botao-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.title-payment{
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
