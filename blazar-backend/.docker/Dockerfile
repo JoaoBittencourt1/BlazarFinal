@@ -39,3 +39,9 @@ RUN pecl install mongodb \
 
 # Install PHP extensions
 RUN docker-php-ext-install zip
+
+# Expor a porta para o Symfony
+EXPOSE 1500
+
+# Definir o comando de inicialização
+CMD ["symfony", "server:start", "--port=1500", "--no-tls"]
