@@ -2,17 +2,17 @@ version: '3.9'
 
 services:
   php:
-    image: php:8.4-fpm
-    container_name: blazar_php
-    volumes:
-      - .:/var/www/html
-      - ./.docker/config/php/php.ini:/usr/local/etc/php/php.ini
-    environment:
-      - SYMFONY_ENV=prod
-      - MONGODB_URL=mongodb+srv://gabrielols381:xDX4vSXcMZTfchhe@cluster0.xzziu3e.mongodb.net/meubanco?retryWrites=true&w=majority&appName=Cluster0
     build:
       context: .
       dockerfile: ./.docker/Dockerfile
+    container_name: blazar_php
+    ports:
+      - "1500:1500"  # Expose Symfony server port
+    volumes:
+      - .:/var/www/html  # Mount the current directory to /var/www/html
+    environment:
+      - SYMFONY_ENV=prod
+      - MONGODB_URL=mongodb+srv://gabrielols381:xDX4vSXcMZTfchhe@cluster0.xzziu3e.mongodb.net/meubanco?retryWrites=true&w=majority&appName=Cluster0
     networks:
       - blazar_backend_network
 
