@@ -262,13 +262,15 @@ class premiumController
             $novoPriceId = ($novoPlano === 'pf') ? $_ENV['STRIPE_PRICE_ID_PF'] : $_ENV['STRIPE_PRICE_ID_PJ'];
     
             // Atualiza o plano na assinatura da Stripe
-            $subscription->items = [
-                [
-                    'id' => $subscription->items->data[0]->id,
-                    'price' => $novoPriceId,
+            $subscription->update([
+                'items' => [
+                    [
+                        'id' => $subscription->items->data[0]->id,
+                        'price' => $novoPriceId,
+                    ]
                 ]
-            ];
-            $subscription->save();
+            ]);
+            
     
             return new JsonResponse(['success' => true, 'message' => 'Plano alterado com sucesso.']);
         } catch (\Exception $e) {

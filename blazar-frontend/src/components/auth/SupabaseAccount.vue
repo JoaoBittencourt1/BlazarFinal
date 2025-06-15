@@ -5,7 +5,6 @@
     <div class="dashboard-screen">
       <main class="account-content">
         <template v-if="activeTab === 'usuario'">
-          <!-- Dados do Usuário -->
           <section class="account-section">
             <h2 class="section-title">Informações da Conta</h2>
             <div class="input-group">
@@ -24,24 +23,6 @@
             </div>
           </section>
 
-          <!-- Plano Atual -->
-          <section class="account-section">
-            <h2 class="section-title">Plano Atual</h2>
-            <div class="input-group">
-              <label>Plano Atual</label>
-              <input type="text" v-model="userPlan" disabled />
-            </div>
-            <div class="input-group">
-              <label>Descrição</label>
-              <textarea v-model="planDescription" disabled></textarea>
-            </div>
-            <div class="input-group">
-              <label>Validade</label>
-              <input type="text" v-model="planValidity" disabled />
-            </div>
-          </section>
-
-          <!-- Outros Dados -->
           <section class="account-section">
             <h2 class="section-title">Endereço</h2>
             <div class="input-grid grid-2">
@@ -54,12 +35,55 @@
                 <input type="text" v-model="endereco" />
               </div>
             </div>
-            <!-- Restante do Endereço -->
+            <div class="input-grid grid-2">
+              <div class="input-group">
+                <label>Número</label>
+                <input type="text" v-model="numeroDaCasa" />
+              </div>
+              <div class="input-group">
+                <label>Complemento</label>
+                <input type="text" v-model="complemento" />
+              </div>
+            </div>
+            <div class="input-grid grid-2">
+              <div class="input-group">
+                <label>Estado</label>
+                <input type="text" v-model="estado" />
+              </div>
+              <div class="input-group">
+                <label>Cidade</label>
+                <input type="text" v-model="cidade" />
+              </div>
+            </div>
+            <div class="input-group">
+              <label>Ponto de Referência</label>
+              <input type="text" v-model="pontoDeReferencia" />
+            </div>
+          </section>
+
+          <section class="account-section">
+            <h2 class="section-title">Informações de Login</h2>
+            <div class="input-group">
+              <label>Email</label>
+              <input type="email" v-model="email" />
+            </div>
+            <div class="botao-wrapper space-between">
+              <button class="link-button" @click="redirectToPasswordRecovery">Alterar senha</button>
+              <button class="botao-salvar" @click="updateProfile" :disabled="loading">Alterar senha</button>
+            </div>
+          </section>
+
+          <section class="account-section">
+            <h2 class="section-title">Contas vinculadas</h2>
+            <div class="linked-account">
+              <span>Conta Google</span>
+              <span v-if="isGoogleLinked">Conectado</span>
+              <button v-else class="link-button" @click="linkGoogleAccount">Vincular</button>
+            </div>
           </section>
         </template>
 
         <template v-else-if="activeTab === 'pagamento'">
-          <!-- Dados de Pagamento -->
           <section class="account-section">
             <h2 class="section-title">Atualizar Método de Pagamento</h2>
             <div class="input-group">
@@ -124,11 +148,6 @@ const numeroCartao = ref(''); // com máscara
 const validadeCartao = ref('');
 const cvvCartao = ref('');
 
-// Variáveis relacionadas ao plano
-const userPlan = ref('Sem plano');
-const planDescription = ref('');
-const planValidity = ref('');
-
 window.addEventListener('tab-change', (e: any) => {
   activeTab.value = e.detail;
   if (e.detail === 'pagamento') {
@@ -161,22 +180,6 @@ async function loadUserData() {
       estado.value = json.estado || '';
       cidade.value = json.cidade || '';
       pontoDeReferencia.value = json.pontoDeReferencia || '';
-
-      // Definir o plano atual
-      if (json.tipoPlano === 'pf') {
-        userPlan.value = 'Pessoa Física';
-        planDescription.value = 'Ideal para profissionais autônomos. Tenha acesso às nossas ferramentas com suporte exclusivo e relatórios simples para seu dia a dia.';
-      } else if (json.tipoPlano === 'pj') {
-        userPlan.value = 'Pessoa Jurídica';
-        planDescription.value = 'Perfeito para empresas. Obtenha recursos avançados, múltiplos acessos e relatórios gerenciais completos para seu negócio.';
-      } else {
-        userPlan.value = 'Sem plano';
-      }
-
-      // Calcular validade (1 ano após a inscrição)
-      const validade = new Date();
-      validade.setFullYear(validade.getFullYear() + 1);
-      planValidity.value = validade.toLocaleDateString();
     }
   } catch {
     Notify.create({ type: 'negative', message: 'Erro ao carregar dados do usuário' });
@@ -274,5 +277,3 @@ onUnmounted(() => {
   if (sidebar) sidebar.remove();
 });
 </script>
-
-

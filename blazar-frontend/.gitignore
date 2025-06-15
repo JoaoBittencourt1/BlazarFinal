@@ -36,3 +36,4 @@ yarn-error.log*
 .credentials
 .env.example
 .vscode
+.vercel
