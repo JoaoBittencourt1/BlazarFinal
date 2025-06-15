@@ -27,7 +27,7 @@ RUN wget https://getcomposer.org/installer -O composer-installer.php \
 
 # Install Symfony CLI
 RUN curl -sS https://get.symfony.com/cli/installer | bash
-RUN  mv ~/.symfony5/bin/symfony /usr/local/bin/sf
+RUN mv ~/.symfony*/bin/symfony /usr/local/bin/symfony
 
 # Install and configure Xdebug
 RUN pecl install xdebug \
@@ -40,8 +40,11 @@ RUN pecl install mongodb \
 # Install PHP extensions
 RUN docker-php-ext-install zip
 
-# Expor a porta para o Symfony
+# Expose port 1500 for Symfony
 EXPOSE 1500
 
-# Definir o comando de inicialização
+# Set the working directory to where Symfony is located
+WORKDIR /var/www/html
+
+# Start Symfony server on port 1500
 CMD ["symfony", "server:start", "--port=1500", "--no-tls"]
